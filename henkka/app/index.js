@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Laskin from './components/Laskin';
+import Laskin from './Laskin';
 
-export default function App(): JSX.Element {
+export default function App() {
   return (
     <View style={styles.container}>
       <Laskin />
