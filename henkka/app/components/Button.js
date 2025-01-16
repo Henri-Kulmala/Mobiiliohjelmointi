@@ -1,12 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-type LaskinButtonProps = {
-  value: string;
-  onPress: (value: string) => void;
-};
-
-export default function LaskinButton({ value, onPress }: LaskinButtonProps): JSX.Element {
+export default function LaskinButton({ value, onPress }) {
   return (
     <TouchableOpacity style={styles.button} onPress={() => onPress(value)}>
       <Text style={styles.buttonText}>{value}</Text>
