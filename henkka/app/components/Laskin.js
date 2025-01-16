@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LaskinButton from './Button';
 
-export default function Laskin(): JSX.Element {
-  const [display, setDisplay] = useState<string>('');
-  const [result, setResult] = useState<string>('');
+export default function Laskin() {
+  const [display, setDisplay] = useState('');
+  const [result, setResult] = useState('');
 
-  const handlePress = (value: string): void => {
+  const handlePress = (value) => {
     if (value === 'C') {
       setDisplay('');
       setResult('');
     } else if (value === '=') {
       try {
-        const evalResult = eval(display);
+        const evalResult = eval(display); 
         setResult(evalResult.toString());
       } catch (error) {
         setResult('Error');
