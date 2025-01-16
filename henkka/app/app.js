@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Laskin from './components/Laskin';
+import  GuessingGame  from './components/GuessingGame';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Laskin />
+      <GuessingGame />
     </View>
   );
 }
