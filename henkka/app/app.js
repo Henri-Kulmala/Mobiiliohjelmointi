@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Laskin from './components/Laskin';
+import  Ostoslista  from './components/Ostoslista';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Laskin />
+      <Ostoslista />
     </View>
   );
 }
