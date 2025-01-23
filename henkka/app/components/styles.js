@@ -40,6 +40,7 @@ const GlobalStyles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
   },
+<<<<<<< HEAD
   result: {
     fontSize: 18,
     fontWeight: 'bold',
@@ -48,6 +49,8 @@ const GlobalStyles = StyleSheet.create({
   }
     
   ,
+=======
+>>>>>>> origin/Tehtävä2
 });
 
 export default GlobalStyles;
