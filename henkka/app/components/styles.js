@@ -40,14 +40,15 @@ const GlobalStyles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
   },
+
   result: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#000000',
     marginTop: 20,
   }
-    
-  ,
+
+
 });
 
 export default GlobalStyles;

@@ -9,7 +9,6 @@ export default function GuessingGame() {
   const [guess, setGuess] = useState('');
   const [result, setResult] = useState('');
   
-
   const handleGuess = () => {
     
     const userGuess = Number(guess);
