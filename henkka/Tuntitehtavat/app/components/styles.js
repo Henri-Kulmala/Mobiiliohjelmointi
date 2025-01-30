@@ -25,10 +25,20 @@ export default StyleSheet.create({
     color: "gray",
   },
   buttons: {
+    padding: 10,
     flexDirection: "row",
     flexWrap: "wrap",
     width: "90%",
     justifyContent: "center",
+  },
+  button: {
+    backgroundColor: "#b3b3b3",
+    padding: 5,
+    borderRadius: 5,
+    flex: 5,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
   },
   historyButton: {
     marginTop: 20,

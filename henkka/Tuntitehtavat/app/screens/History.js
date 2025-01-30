@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, FlatList } from "react-native";
 import styles from "../components/styles";
 
-export default function History({ history }) {
+export default function HistoryScreen({ history }) {
   return (
     <View style={styles.container}>
       <Text style={styles.historyTitle}>Calculation History</Text>

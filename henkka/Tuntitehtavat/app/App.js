@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Calculator from "./Calculator";
-import History from "./History";
+import Calculator from "./screens/Calculator";
+import History from "./screens/History.js";
 
 const Stack = createStackNavigator();
 
