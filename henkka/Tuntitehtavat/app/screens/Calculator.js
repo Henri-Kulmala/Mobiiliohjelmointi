@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Text, View, FlatList, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import Button from "../components/Button";
 import styles from "../components/styles";
 
-export default function Calculator({ navigation, history, setHistory }) {
+export default function Calculator({ navigation, setHistory }) {
   const [display, setDisplay] = useState("");
   const [result, setResult] = useState("");
 
