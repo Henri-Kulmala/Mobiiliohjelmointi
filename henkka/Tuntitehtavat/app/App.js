@@ -1,24 +1,51 @@
 import React, { useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import Calculator from "./screens/Calculator";
-import History from "./screens/History.js";
-
-const Stack = createStackNavigator();
+import { View, TextInput, Button, Alert } from "react-native";
+import Kartta from "./screens/Kartta";
+import styles from "./components/styles"; 
 
 export default function App() {
-  const [history, setHistory] = useState([]);
+  const [address, setAddress] = useState("");
+  const [coords, setCoords] = useState(null);
+
+  const fetchCoordinates = async () => {
+    if (!address.trim()) {
+      Alert.alert("Virhe", "Osoitekenttä on tyhjä.");
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://geocode.maps.co/search?q=${encodeURIComponent(address)}`);
+      const data = await response.json();
+
+      if (data.length === 0) {
+        Alert.alert("Virhe", "Osoitetta ei löydy.");
+        return;
+      }
+
+      const { lat, lon } = data[0];
+      console.log(data);
+      setCoords({
+        latitude: parseFloat(lat),
+        longitude: parseFloat(lon),
+      });
+
+    } catch (error) {
+      Alert.alert("Virhe", "Virhe ladattaessa osoitetietoja.");
+    }
+  };
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Calculator">
-          {(props) => <Calculator {...props} history={history} setHistory={setHistory} />}
-        </Stack.Screen>
-        <Stack.Screen name="History">
-          {(props) => <History {...props} history={history} />}
-        </Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={styles.mainContainer}>
+      <Kartta coords={coords} />
+      <TextInput
+        style={styles.input}
+        placeholder="Syötä osoite"
+        value={address}
+        onChangeText={setAddress}
+      />
+      <View style={styles.buttonContainer}>
+        <Button title="Etsi" onPress={fetchCoordinates} />
+      </View>
+    </View>
   );
 }
